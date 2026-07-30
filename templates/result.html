@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+    <h2>AI analysis of your fit</h2>
+
+    <p class="meta">
+        <strong>Uploaded resume:</strong> {{ resume_filename }} ·
+        <strong>Resume text length:</strong> {{ resume_text_length }} characters ·
+        <strong>Job description length:</strong> {{ jd_length }} characters
+    </p>
+
+    <!-- Fit score chips -->
+    <p class="section-title">Fit scores</p>
+    <div style="display:flex; gap:1rem; margin-bottom:1rem; flex-wrap:wrap;">
+        <div class="score-pill">
+            Overall fit: <strong>{{ overall_fit }}%</strong>
+        </div>
+        <div class="score-pill">
+            Experience fit: <strong>{{ experience_fit }}%</strong>
+        </div>
+        <div class="score-pill">
+            Technical fit: <strong>{{ technical_fit }}%</strong>
+        </div>
+    </div>
+
+    <!-- Strengths -->
+    <p class="section-title">Strengths</p>
+    <ul>
+        {% for s in strengths %}
+            <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Gaps -->
+    <p class="section-title">Gaps / improvements</p>
+    <ul>
+        {% for g in gaps %}
+            <li>{{ g }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Existing previews -->
+    <div class="layout-two-columns" style="margin-top: 1.5rem;">
+        <div>
+            <p class="section-title">Resume preview</p>
+            <pre class="text-preview">{{ resume_preview }}</pre>
+        </div>
+
+        <div>
+            <p class="section-title">Job description preview</p>
+            <pre class="text-preview">{{ job_description }}</pre>
+        </div>
+    </div>
+
+    <a href="/" class="link-back">Back to upload</a>
+</section>
+{% endblock %}

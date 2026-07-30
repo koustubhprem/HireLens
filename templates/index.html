@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+    <h2>Upload your resume & job description</h2>
+
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="resume_file">Resume (PDF for now):</label>
+            <input type="file" id="resume_file" name="resume_file" required>
+        </div>
+
+        <div class="form-group">
+            <label for="job_description">Job description:</label>
+            <textarea id="job_description" name="job_description" rows="10" required></textarea>
+        </div>
+
+        <button type="submit">Analyze fit</button>
+    </form>
+</section>
+{% endblock %}
