@@ -1,4 +1,4 @@
-# CouncilFit — AI Job Fit Analyzer
+# HireLens — AI Job Fit Analyzer
 
 An AI-powered tool that analyzes how well a resume matches a job description, using LLMs (Gemini and Groq) to score fit, highlight strengths and gaps, and (in progress) generate tailored resumes and cover letters.
 
